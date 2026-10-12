@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.comp
+package dev.relayhub.ui.comp
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -32,7 +32,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import dev.eta.relayhub.R
+import dev.relayhub.R
 import kotlinx.coroutines.delay
 
 /**

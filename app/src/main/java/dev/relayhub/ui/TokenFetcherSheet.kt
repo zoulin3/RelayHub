@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -59,8 +59,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import dev.eta.relayhub.ui.comp.BottomSheetSurface
-import dev.eta.relayhub.ui.comp.SheetPad
+import dev.relayhub.ui.comp.BottomSheetSurface
+import dev.relayhub.ui.comp.SheetPad
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject

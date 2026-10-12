@@ -1,4 +1,4 @@
-package dev.eta.relayhub.data
+package dev.relayhub.data
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

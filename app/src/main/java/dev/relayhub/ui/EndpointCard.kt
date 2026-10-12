@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -71,11 +71,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import dev.eta.relayhub.data.Endpoint
-import dev.eta.relayhub.ui.comp.EmptyState
-import dev.eta.relayhub.ui.comp.MonoLine
-import dev.eta.relayhub.ui.comp.Pill
-import dev.eta.relayhub.ui.comp.StatusDot
+import dev.relayhub.data.Endpoint
+import dev.relayhub.ui.comp.EmptyState
+import dev.relayhub.ui.comp.MonoLine
+import dev.relayhub.ui.comp.Pill
+import dev.relayhub.ui.comp.StatusDot
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

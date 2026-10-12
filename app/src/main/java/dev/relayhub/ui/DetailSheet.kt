@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -39,10 +39,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import dev.eta.relayhub.data.Endpoint
-import dev.eta.relayhub.ui.comp.Pill
-import dev.eta.relayhub.ui.comp.BottomSheetSurface
-import dev.eta.relayhub.ui.comp.SheetPad
+import dev.relayhub.data.Endpoint
+import dev.relayhub.ui.comp.Pill
+import dev.relayhub.ui.comp.BottomSheetSurface
+import dev.relayhub.ui.comp.SheetPad
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

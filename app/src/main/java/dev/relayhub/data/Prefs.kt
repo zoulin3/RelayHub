@@ -1,4 +1,4 @@
-package dev.eta.relayhub.data
+package dev.relayhub.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore

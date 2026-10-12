@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.theme
+package dev.relayhub.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

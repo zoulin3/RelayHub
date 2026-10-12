@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import android.content.ClipData
 import android.content.ClipboardManager

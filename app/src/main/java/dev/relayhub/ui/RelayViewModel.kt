@@ -1,19 +1,19 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import dev.eta.relayhub.data.AccountApi
-import dev.eta.relayhub.data.AccentPreset
-import dev.eta.relayhub.data.ColorSource
-import dev.eta.relayhub.data.Endpoint
-import dev.eta.relayhub.data.EndpointDao
-import dev.eta.relayhub.data.PrefsRepo
-import dev.eta.relayhub.data.RelayDatabase
-import dev.eta.relayhub.data.SchemeStyle
-import dev.eta.relayhub.data.ThemeMode
-import dev.eta.relayhub.data.ThemePrefs
+import dev.relayhub.data.AccountApi
+import dev.relayhub.data.AccentPreset
+import dev.relayhub.data.ColorSource
+import dev.relayhub.data.Endpoint
+import dev.relayhub.data.EndpointDao
+import dev.relayhub.data.PrefsRepo
+import dev.relayhub.data.RelayDatabase
+import dev.relayhub.data.SchemeStyle
+import dev.relayhub.data.ThemeMode
+import dev.relayhub.data.ThemePrefs
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -465,7 +465,7 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
 
         // 1) 官方服务商：能查余额的（DeepSeek、Moonshot、硅基流动、OpenRouter）直接查；
         //    没开放余额接口的（智谱、MiMo、百炼等）只校验 Key，并说明去哪看余额
-        val official = dev.eta.relayhub.data.OfficialApi.query(item.url, item.apiKey)
+        val official = dev.relayhub.data.OfficialApi.query(item.url, item.apiKey)
         if (official != null) {
             val d = official.display
             val isBalance = !d.startsWith("未填写") &&
@@ -490,7 +490,7 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
         //      令牌存在 localStorage（非 HttpOnly），能在应用内登录后抓到
         if (item.url.lowercase().let { it.contains("bigmodel.cn") } && item.authToken.isNotBlank()) {
             val res = runCatching {
-                dev.eta.relayhub.data.ZhipuApi.query(item.url, item.authToken)
+                dev.relayhub.data.ZhipuApi.query(item.url, item.authToken)
             }
             res.getOrNull()?.let { bal ->
                 dao.setBalanceAndToken(
@@ -504,7 +504,7 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
                 return "智谱 ${bal.display}"
             }
             val err = res.exceptionOrNull()
-            if (err is dev.eta.relayhub.data.ZhipuApi.Expired) {
+            if (err is dev.relayhub.data.ZhipuApi.Expired) {
                 // 令牌失效：清掉，回到下面的官方分支给出「去哪看余额」的说明
                 dao.setBalanceAndToken(
                     item.id, "", System.currentTimeMillis(), "", "", 0L,
@@ -519,7 +519,7 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
             var lastMsg: String? = null
 
             val modern = runCatching {
-                dev.eta.relayhub.data.SessionApi.refresh(base, item.siteCookie)
+                dev.relayhub.data.SessionApi.refresh(base, item.siteCookie)
             }
             val fresh = modern.getOrNull()
             if (fresh != null && fresh.display.isNotBlank()) {
@@ -540,10 +540,10 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
             val modernErr = modern.exceptionOrNull()
             when (modernErr) {
                 // 新版接口不存在 → 说明是旧版 new-api，走会话方式
-                is dev.eta.relayhub.data.SessionApi.NotSupported -> {
+                is dev.relayhub.data.SessionApi.NotSupported -> {
                     if (item.siteUserId.isNotBlank()) {
                         val legacy = runCatching {
-                            dev.eta.relayhub.data.SessionApi.selfBySession(
+                            dev.relayhub.data.SessionApi.selfBySession(
                                 base, item.siteCookie, item.siteUserId,
                             )
                         }
@@ -566,7 +566,7 @@ class RelayViewModel(app: Application) : AndroidViewModel(app) {
 
             val msg = lastMsg ?: "Cookie 查询失败"
             // 凭证彻底失效时清掉，避免一直报同一个错
-            val expired = modernErr is dev.eta.relayhub.data.SessionApi.Expired
+            val expired = modernErr is dev.relayhub.data.SessionApi.Expired
             dao.setBalanceAndCookie(
                 item.id,
                 "",

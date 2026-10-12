@@ -1,4 +1,4 @@
-package dev.eta.relayhub.data
+package dev.relayhub.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

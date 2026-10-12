@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.comp
+package dev.relayhub.ui.comp
 
 import androidx.activity.compose.PredictiveBackHandler
 import androidx.compose.animation.core.Animatable

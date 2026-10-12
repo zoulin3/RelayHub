@@ -1,7 +1,7 @@
-package dev.eta.relayhub
+package dev.relayhub
 
 import android.app.Application
-import dev.eta.relayhub.data.RelayDatabase
+import dev.relayhub.data.RelayDatabase
 import kotlinx.coroutines.runBlocking
 
 class RelayHubApp : Application() {

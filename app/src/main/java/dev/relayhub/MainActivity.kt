@@ -1,4 +1,4 @@
-package dev.eta.relayhub
+package dev.relayhub
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,9 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.eta.relayhub.ui.RelayApp
-import dev.eta.relayhub.ui.RelayViewModel
-import dev.eta.relayhub.ui.theme.RelayHubTheme
+import dev.relayhub.ui.RelayApp
+import dev.relayhub.ui.RelayViewModel
+import dev.relayhub.ui.theme.RelayHubTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

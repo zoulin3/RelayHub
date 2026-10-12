@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import android.content.Context
 import android.content.Intent
@@ -76,8 +76,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import dev.eta.relayhub.data.Endpoint
-import dev.eta.relayhub.ui.comp.ConfirmDialog
+import dev.relayhub.data.Endpoint
+import dev.relayhub.ui.comp.ConfirmDialog
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -140,7 +140,7 @@ fun RelayApp(vm: RelayViewModel) {
     Box(modifier = Modifier.fillMaxSize()) {
     // 启动遮罩：首页数据就绪后淡出
     if (!splashDone) {
-        dev.eta.relayhub.ui.comp.LaunchOverlay(
+        dev.relayhub.ui.comp.LaunchOverlay(
             ready = ready,
             onFinished = { splashDone = true },
         )
@@ -318,7 +318,7 @@ fun RelayApp(vm: RelayViewModel) {
             onMessage = { toast(it) },
             onFetchCredential = { address, sink ->
                 // 用编辑框里当前的地址（新增时也生效），并统一去掉 /v1 之类的版本段
-                val root = dev.eta.relayhub.data.BalanceApi.rootOf(address)
+                val root = dev.relayhub.data.BalanceApi.rootOf(address)
                 if (root.isBlank()) {
                     toast("先填好接口地址，再获取登录凭证")
                 } else {

@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.theme
+package dev.relayhub.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import kotlin.math.max

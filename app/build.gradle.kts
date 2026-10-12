@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.eta.relayhub"
+    namespace = "dev.relayhub"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "dev.eta.relayhub"
+        applicationId = "dev.relayhub"
         minSdk = 34
         targetSdk = 36
         versionCode = 1

@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
@@ -51,9 +51,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import dev.eta.relayhub.data.Endpoint
-import dev.eta.relayhub.ui.comp.BottomSheetSurface
-import dev.eta.relayhub.ui.comp.SheetPad
+import dev.relayhub.data.Endpoint
+import dev.relayhub.ui.comp.BottomSheetSurface
+import dev.relayhub.ui.comp.SheetPad
 
 /** 添加 / 编辑中转站的底部表单。 */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,7 +79,7 @@ fun EditSheet(
     var pasteHint by remember(base.id) { mutableStateOf<String?>(null) }
 
     val canSave = name.isNotBlank() || url.isNotBlank()
-    val panelGuess = dev.eta.relayhub.data.BalanceApi.rootOf(url)
+    val panelGuess = dev.relayhub.data.BalanceApi.rootOf(url)
 
     /** 读取剪贴板并按内容自动归类 */
     fun smartPaste() {
@@ -247,10 +247,10 @@ fun EditSheet(
 
             Spacer(Modifier.height(20.dp))
 
-            val vendor = dev.eta.relayhub.data.OfficialApi.detect(url)
+            val vendor = dev.relayhub.data.OfficialApi.detect(url)
             // 官方厂商分两种：能用 API Key 直接查余额的（DeepSeek 等）不需要凭证；
             // 余额只在控制台里的（智谱、MiMo 等）仍然需要登录后抓凭证。
-            val directBalance = dev.eta.relayhub.data.OfficialApi.supportsBalance(url)
+            val directBalance = dev.relayhub.data.OfficialApi.supportsBalance(url)
             val needsCredential = !directBalance
 
             Text(

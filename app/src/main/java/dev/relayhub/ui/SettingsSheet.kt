@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui
+package dev.relayhub.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -46,14 +46,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import dev.eta.relayhub.data.AccentPreset
-import dev.eta.relayhub.data.ColorSource
-import dev.eta.relayhub.data.SchemeStyle
-import dev.eta.relayhub.data.ThemeMode
-import dev.eta.relayhub.data.ThemePrefs
-import dev.eta.relayhub.ui.comp.BottomSheetSurface
-import dev.eta.relayhub.ui.comp.SectionLabel
-import dev.eta.relayhub.ui.comp.SheetPad
+import dev.relayhub.data.AccentPreset
+import dev.relayhub.data.ColorSource
+import dev.relayhub.data.SchemeStyle
+import dev.relayhub.data.ThemeMode
+import dev.relayhub.data.ThemePrefs
+import dev.relayhub.ui.comp.BottomSheetSurface
+import dev.relayhub.ui.comp.SectionLabel
+import dev.relayhub.ui.comp.SheetPad
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

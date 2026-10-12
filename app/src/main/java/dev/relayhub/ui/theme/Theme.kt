@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.theme
+package dev.relayhub.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -12,10 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import dev.eta.relayhub.data.ColorSource
-import dev.eta.relayhub.data.SchemeStyle
-import dev.eta.relayhub.data.ThemeMode
-import dev.eta.relayhub.data.ThemePrefs
+import dev.relayhub.data.ColorSource
+import dev.relayhub.data.SchemeStyle
+import dev.relayhub.data.ThemeMode
+import dev.relayhub.data.ThemePrefs
 
 @Composable
 fun RelayHubTheme(

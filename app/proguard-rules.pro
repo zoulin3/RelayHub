@@ -1,6 +1,6 @@
 # Room / Kotlin 序列化在 release 混淆下的必要保留规则
--keep class dev.eta.relayhub.data.** { *; }
--keepclassmembers class dev.eta.relayhub.data.** { *; }
+-keep class dev.relayhub.data.** { *; }
+-keepclassmembers class dev.relayhub.data.** { *; }
 
 # kotlinx.serialization
 -keepattributes *Annotation*, InnerClasses

@@ -1,4 +1,4 @@
-package dev.eta.relayhub.ui.comp
+package dev.relayhub.ui.comp
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

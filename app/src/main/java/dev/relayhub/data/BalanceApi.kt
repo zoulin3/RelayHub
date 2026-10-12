@@ -1,4 +1,4 @@
-package dev.eta.relayhub.data
+package dev.relayhub.data
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
