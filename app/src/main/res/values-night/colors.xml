@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 启动窗口底色：深色模式用深底，避免冷启动白闪 -->
+    <color name="launch_background">#101014</color>
+    <color name="splash_background">#121216</color>
+    <color name="splash_logo">#A9C0FF</color>
+    <color name="splash_title">#E6E1E9</color>
+    <color name="splash_subtitle">#938F99</color>
+    <color name="splash_ring">#3A3A44</color>
+</resources>
